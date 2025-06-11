@@ -1,0 +1,74 @@
+import 'package:flutter/material.dart';
+
+class NotificationPage extends StatelessWidget {
+  const NotificationPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Notifications"),
+        backgroundColor: Colors.blueAccent,
+        leading: const Icon(Icons.arrow_back),
+        actions: const [
+          Icon(Icons.notifications_none),
+          SizedBox(width: 16),
+        ],
+      ),
+      body: ListView(
+        padding: const EdgeInsets.all(16),
+        children: const [
+          NotificationTile(
+            icon: Icons.check_circle,
+            iconColor: Colors.green,
+            message: "Bed Successfully transferred to\nPatient XYZ",
+            time: "2 min ago",
+          ),
+          NotificationTile(
+            icon: Icons.error,
+            iconColor: Colors.red,
+            message: "Your bed transfer request has been\nrejected due to unavailability",
+            time: "1 hr ago",
+          ),
+          NotificationTile(
+            icon: Icons.warning_amber,
+            iconColor: Colors.orange,
+            message: "Bed transfer delayed.\nExpected time: 2 hrs",
+            time: "yesterday",
+          ),
+          NotificationTile(
+            icon: Icons.local_shipping,
+            iconColor: Colors.black,
+            message: "Ambulance assigned for transfer",
+            time: "Yesterday",
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class NotificationTile extends StatelessWidget {
+  final IconData icon;
+  final Color iconColor;
+  final String message;
+  final String time;
+
+  const NotificationTile({
+    super.key,
+    required this.icon,
+    required this.iconColor,
+    required this.message,
+    required this.time,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      leading: Icon(icon, color: iconColor, size: 30),
+      title: Text(message),
+      subtitle: Text(time),
+      contentPadding: const EdgeInsets.symmetric(vertical: 8.0),
+    );
+  }
+}
