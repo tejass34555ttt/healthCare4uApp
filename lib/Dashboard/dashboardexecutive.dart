@@ -3,7 +3,7 @@ import 'package:transfer_bedapp/Bed/bed_available.dart';
 import 'package:transfer_bedapp/Patients/TotalPatients.dart';
 import 'package:transfer_bedapp/widgets/CardTotalPatients.dart';
 import 'package:transfer_bedapp/widgets/appbar.dart';
-import 'package:transfer_bedapp/Request/assignexcutive.dart';
+import 'package:transfer_bedapp/Request/Patient_assignexecutive.dart';
 
 import 'package:transfer_bedapp/widgets/dashboardcard.dart';
 import 'package:transfer_bedapp/widgets/drawerCustom.dart';
@@ -88,7 +88,7 @@ class Dashboardexective extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => AssignExecutivePage(),
+                        builder: (context) => Patient_assignexecutive(),
                       ),
                     );
                   },

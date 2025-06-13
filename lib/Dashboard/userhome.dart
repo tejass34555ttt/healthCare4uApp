@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:transfer_bedapp/HomeMedicalServices/homeModicalServices.dart';
-import 'package:transfer_bedapp/Patients/Patient_Details.dart';
-import 'package:transfer_bedapp/Patients/detailform.dart';
+import 'package:transfer_bedapp/Patients/AddPatientsForm.dart';
 import 'package:transfer_bedapp/ambulance/addambulance.dart';
 import 'package:transfer_bedapp/ambulance/book_Ambulance_Services.dart';
 import 'package:transfer_bedapp/diagnostics/Add_Diagnostics.dart';

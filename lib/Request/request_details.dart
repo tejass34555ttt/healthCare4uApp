@@ -1,7 +1,7 @@
 // pages/request_details_page.dart
 import 'package:flutter/material.dart';
 import '../widgets/timeline_tile.dart';
-import '../widgets/patient_requests_card.dart';
+import '../widgets/patient_details_card.dart';
 
 class RequestDetailsPage extends StatelessWidget {
   const RequestDetailsPage({super.key});
@@ -52,13 +52,13 @@ class RequestDetailsPage extends StatelessWidget {
             SizedBox(height: 24),
 
             // Patient Details Section
-            PatientDetailsCard(
+            /*PatientDetailsCard(
               name: "S V Shinde",
               age: "23yrs",
               gender: "Female",
               contact: "7020826505",
               address: "Nashik Road, Jail Road",
-            ),
+            ),*/
           ],
         ),
       ),

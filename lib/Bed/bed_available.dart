@@ -78,7 +78,7 @@ class BedsAvailablePage extends StatelessWidget {
                   ),
                   WardAvailabilityRow(ward: "ICU", availability: "5 Available"),
                   WardAvailabilityRow(
-                    ward: "Delux",
+                    ward: "Deluxe",
                     availability: "3 Available",
                   ),
                   WardAvailabilityRow(
