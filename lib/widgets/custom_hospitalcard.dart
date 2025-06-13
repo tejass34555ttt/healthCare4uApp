@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
-class PatientStatusCardApproved extends StatelessWidget {
-  final String date;
-  final String patientName;
+class HospitalList extends StatelessWidget {
+  final String location;
+  final String hospitalName;
   final String status;
   final Color statusColor;
   final Color statusColorText;
   final VoidCallback onTap;
 
-  const PatientStatusCardApproved({
+  const HospitalList({
     super.key,
-    required this.date,
-    required this.patientName,
+    required this.location,
+    required this.hospitalName,
     required this.status,
     this.statusColor = const Color.fromARGB(255, 119, 184, 121),
     this.statusColorText = const Color.fromARGB(255, 0, 0, 0),
@@ -20,48 +20,30 @@ class PatientStatusCardApproved extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    final screenHeight = MediaQuery.of(context).size.height;
-
     return Container(
       padding: const EdgeInsets.all(12),
-      margin: EdgeInsets.symmetric(
-        horizontal: screenWidth * 0.05,
-        vertical: screenHeight * 0.01,
-      ),
+      margin: const EdgeInsets.all(20),
       width: double.infinity,
-      height: screenHeight * 0.15, // Adjust height based on screen size
+      height: 120,
       decoration: BoxDecoration(
         border: Border.all(color: Colors.grey, width: 2),
         borderRadius: BorderRadius.circular(12),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          // Hospital Name and Status
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Expanded(
-                child: Text(
-                  " $patientName",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: screenWidth * 0.055,
-                  ),
-                  overflow: TextOverflow.ellipsis,
+              Text(
+                hospitalName,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
                 ),
               ),
-              // Top Row: Date and Status
-              /*Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                date,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: screenWidth * 0.055, // responsive font size
-                ),
-              ),*/
               Container(
                 padding: const EdgeInsets.symmetric(
                   vertical: 5,
@@ -77,38 +59,20 @@ class PatientStatusCardApproved extends StatelessWidget {
                   style: TextStyle(
                     color: statusColorText,
                     fontWeight: FontWeight.bold,
-                    fontSize: screenWidth * 0.035,
                   ),
                 ),
               ),
             ],
           ),
 
+          // Location and Button
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                date,
-                style: TextStyle(
-                  fontWeight: FontWeight.w500,
-                  fontSize: screenWidth * 0.04, // responsive font size
-                ),
+                "Location: $location",
+                style: const TextStyle(fontWeight: FontWeight.w500),
               ),
-
-              // Bottom Row: Patient name and action button
-              /*Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(
-                child: Text(
-                  "Patient Name: $patientName",
-                  style: TextStyle(
-                    fontWeight: FontWeight.w500,
-                    fontSize: screenWidth * 0.04,
-                  ),
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ),*/
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.all(8),

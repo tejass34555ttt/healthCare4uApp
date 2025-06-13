@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:transfer_bedapp/Dashboard/dashboardadmin.dart';
 import 'package:transfer_bedapp/Dashboard/dashboardexecutive.dart';
 import 'package:transfer_bedapp/widgets/CustomButton.dart';
 
@@ -74,7 +75,7 @@ class ExecutiveAlertRejectBox extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => Dashboardexective(),
+                      builder: (context) => DashboardScreenAdmin(),
                     ),
                   );
                 },
